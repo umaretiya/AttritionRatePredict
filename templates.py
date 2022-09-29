@@ -36,6 +36,8 @@ list_of_files = [
     "tests/integration/test_inti.py",
     "research/study.ipynb",
     "configs/config.yaml",
+    "configs/schema.yaml",
+    "configs/model.yaml",
     ".dvcignore",
     "dvc.yaml",
     "params.yaml",

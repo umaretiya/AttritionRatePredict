@@ -1,0 +1,15 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  dataset: Table_1.csv 
+
+
+data_transformation:
+  root_dir: artifacts/transformation
+  preprocessod_obj: artifacts/transformation/pre_pro.pkl
+
+
+model_training:
+  root_dir: artifacts/training
+  trained_model: artifacts/training/model.pkl

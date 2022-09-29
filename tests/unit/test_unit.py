@@ -1,4 +1,3 @@
-from urllib import response
 import pytest
 from attritionRate.utils import read_yaml
 from pathlib import Path
