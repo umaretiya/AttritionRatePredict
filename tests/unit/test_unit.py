@@ -36,7 +36,7 @@ class Pytest_Unit:
         respons = read_yaml(Path(self.yaml_files[-1]))
         assert isinstance(respons, ConfigBox)
         
-    @pytest.mark.parametrize(self,"path_to_yaml",yaml_files)
+    @pytest.mark.parametrize("path_to_yaml",yaml_files)
     def test_read_yaml_bad_type(path_to_yaml):
         with pytest.raises(EnsureError):
             read_yaml(path_to_yaml)
