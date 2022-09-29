@@ -1,0 +1,33 @@
+dvc
+pandas
+notebook
+numpy
+pytest==7.1.3
+matplotlib
+seaborn
+python-box==6.0.2
+pyYAML
+tqdm
+ensure==1.0.2
+joblib
+types-PyYAML
+scipy
+mlflow==1.26.1
+-e .
+tensorflow
+dvc
+pandas
+notebook
+numpy
+matplotlib
+seaborn
+python-box==6.0.2
+pyYAML
+tqdm
+ensure==1.0.2
+joblib
+types-PyYAML
+scipy
+mlflow==1.26.1
+
+-e .
