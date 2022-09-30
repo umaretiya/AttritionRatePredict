@@ -1,0 +1,1 @@
+from attritionRate.entity.config_entity import *
