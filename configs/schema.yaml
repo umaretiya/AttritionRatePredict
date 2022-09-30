@@ -1,0 +1,42 @@
+#'table_id', 'name', 'phone_number', 'Location', 'Emp_Group',
+#'Function', 'Gender ', 'Tenure', 'Tenure_Grp', 'Experience_yy_mm',
+#'Marital_Status', 'Age_yy', 'Hiring_Source',
+#'Promoted_NonPromoted', 'Job_Role_Match', 'Stay_Left'
+
+columns:
+  tabel_id: int64
+  name: object
+  phone_number: int64
+  Location: object
+  Emp_Group: object
+  Function: object
+  Gender: object
+  Tenure: float64
+  Tenure_Grp: object
+  Experience_yy_mm: float64
+  Maritial_Status: object
+  Age_yy: float64
+  Hiring_Source: object
+  Promoted_NonPromoted: object
+  Job_Role_Match: object
+  Stay_Left: object
+
+categorical_columns:
+  - name
+  - Location
+  - Emp_Group
+  - Function
+  - Gender 
+  - Tenure_Grp
+  - Marital_Status
+  - Hiring_Source
+  - Promoted_NonPromoted
+  - Job_Role_Match
+  - Stay_Left
+
+numerical_columns:
+  - table_id
+  - phone_number
+  - Tenure
+  - Experience_yy_mm
+  - Age_yy
