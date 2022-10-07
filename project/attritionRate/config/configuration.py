@@ -9,6 +9,8 @@ from attritionRate.entity import (
 from pathlib import Path
 import os
 
+from yaml import serialize
+
 
 class ConfigurationManager:
     def __init__(
@@ -28,10 +30,17 @@ class ConfigurationManager:
             data_dir=config.data_dir,
         )
         return data_ingestion_config
-
+    
+    def get_data_validation_config(self):
+        config = self.config.data_validation_config
+        dataset_dir = config.clean_data_dir
+        serialize_obj_dir = config.serialized_obj_dir
+        marketing_campaing_csv = config['marketing_compaign.csv']
+        
     def get_data_transformation_config(self) -> DataTransformationConfig:
         config = self.config.data_transformation
-        create_directories([config.root_dir])
+        transformed_data = config.transformed_data_dir
+        create_directories([transformed_data])
 
         data_transformation_config = DataTransformationConfig(
             root_dir=config.root_dir,
@@ -40,9 +49,14 @@ class ConfigurationManager:
         return data_transformation_config
 
     def get_training_config(self) -> TrainingConfig:
-        training = self.config.training
+        training = self.config.model_training
+        trained_model_dir = training.trained_model_dir
+        trained_model = training.trained_model_name
         create_directories([training.root_dir])
 
-        traing_config = TrainingConfig(
-            root_dir=training.root_dir, trained_model_path=training.trained_model_path
+        training_config = TrainingConfig(
+            root_dir=training.root_dir,
+            trained_model_path=training.trained_model_path,
+            trained_model_path=training.trained_model_path,
         )
+        return training_config

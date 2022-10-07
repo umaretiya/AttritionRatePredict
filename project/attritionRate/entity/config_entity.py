@@ -4,18 +4,28 @@ from pathlib import Path
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
+    dataset_url: str
+    dataset_dir: Path
+    ingested_dir: Path
+    raw_data_dir: Path
+    dataset: str
+
+
+@dataclass(frozen=True)
+class DataValidationConfig:
     root_dir: Path
-    source_dir: Path
-    data_dir: Path
+    prepro_obj_path: Path
+    clean_data_dir: Path
+    serialized_obj_dir: Path
+    marketing_compaign_csv_file: str
 
 
 @dataclass(frozen=True)
 class DataTransformationConfig:
-    root_dir: Path
-    prepro_obj_path: Path
+    transformed_data_dir: Path
 
 
 @dataclass(frozen=True)
 class TrainingConfig:
-    root_dir: Path
-    trained_model_path: Path
+    trained_model_dir: Path
+    trained_model_name: str
