@@ -1,42 +1,41 @@
-#'table_id', 'name', 'phone_number', 'Location', 'Emp_Group',
-#'Function', 'Gender ', 'Tenure', 'Tenure_Grp', 'Experience_yy_mm',
-#'Marital_Status', 'Age_yy', 'Hiring_Source',
-#'Promoted_NonPromoted', 'Job_Role_Match', 'Stay_Left'
 
 columns:
-  tabel_id: int64
+  table_id: int64
   name: object
   phone_number: int64
-  Location: object
-  Emp_Group: object
-  Function: object
-  Gender: object
-  Tenure: float64
-  Tenure_Grp: object
-  Experience_yy_mm: float64
-  Maritial_Status: object
-  Age_yy: float64
-  Hiring_Source: object
-  Promoted_NonPromoted: object
-  Job_Role_Match: object
-  Stay_Left: object
+  location: object
+  emp_group: object
+  function: object
+  gender: object
+  tenure: float64
+  tenure_grp: object
+  experience_yymm: float64
+  marital_status: object
+  age_in_yy: float64
+  hiring_source: object
+  promoted_non_promoted: object
+  job_role_match: object
+  stay_left: object
 
 categorical_columns:
   - name
-  - Location
-  - Emp_Group
-  - Function
-  - Gender 
-  - Tenure_Grp
-  - Marital_Status
-  - Hiring_Source
-  - Promoted_NonPromoted
-  - Job_Role_Match
-  - Stay_Left
+  - location
+  - emp_group
+  - function
+  - gender
+  - tenure_grp
+  - marital_status
+  - hiring_source
+  - promoted_non_promoted
+  - job_role_match
+  
 
 numerical_columns:
   - table_id
   - phone_number
-  - Tenure
-  - Experience_yy_mm
-  - Age_yy
+  - tenure
+  - experience_yymm
+  - age_in_yy
+
+
+target_column: stay_left

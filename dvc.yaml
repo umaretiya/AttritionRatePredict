@@ -1,0 +1,29 @@
+stages:
+  data_ingestion:
+    cmd: python project\attritionRate\pipeline\st_01_data_ingestion.py
+    deps:
+      - project\attritionRate\pipeline\st_01_data_ingestion.py
+      - configs/config.yaml
+      - configs/schema.yaml
+    outs:
+      - project\attritionRate\artifacts\data_ingestion
+      
+  data_transformation:
+    cmd: python project\attritionRate\pipeline\st_02_data_transformation.py
+    deps:
+      - project\attritionRate\pipeline\st_02_data_transformation.py
+      - configs/config.yaml
+      - configs/schema.yaml
+    outs:
+      - project\attritionRate\artifacts\data_transformation
+      - project\attritionRate\artifacts\data_validation
+
+  model_training:
+    cmd: python project\attritionRate\pipeline\st_03_model_training.py
+    deps:
+      - project\attritionRate\pipeline\st_03_model_training.py
+      - configs/config.yaml
+      - configs/schema.yaml
+      - configs/model.yaml
+    outs:
+      - project\attritionRate\artifacts\training

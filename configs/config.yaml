@@ -1,24 +1,37 @@
 artifacts_config:
+  project: project
+  pipeline: attritionRate
   artifacts_dir: artifacts
 
 
 data_ingestion:
-  dataset_url: 'Table_1.csv'
-  dataset_dir: dataset
-  ingested_dir: ingested_data
+  destination_dir: ingested_data
+  source_file: 'Table_1.csv'
+  ingested_train_dir: train
+  ingested_test_dir: test 
   raw_data_dir: raw_data
-  dataset: Table_1.csv 
+  
 
 data_validation_config:
-  clean_data_dir: clean_data
-  serialized_obj_dir: serialized_obj
-  marketing_compaign_csv_file: marketing_compaign.csv
+  data_validation_dir: validation_data
+  # config_dirs: configs
+  schema_filename: schema.yaml
+  report_filename: report.json
+  report_page_filename: report.html
 
 data_transformation:
   transformed_data_dir: transformed_data
-  # preprocessod_obj: artifacts/transformation/pre_pro.pkl
+  transformed_train_dir: train
+  transformed_test_dir: test
+  preprocessing_dir: preprocessed
+  preprocessed_object_file_name: preprocessed.pkl
 
 
 model_training:
   trained_model_dir: trained_model
   trained_model_name: model.pkl
+
+
+model_evaluating:
+  evaluated_model_dir: model_evaluation.yaml
+

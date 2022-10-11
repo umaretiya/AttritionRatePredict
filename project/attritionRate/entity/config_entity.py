@@ -3,29 +3,52 @@ from pathlib import Path
 
 
 @dataclass(frozen=True)
+class PipeLineConfig:
+    artifact_dir: Path
+
+
+@dataclass(frozen=True)
 class DataIngestionConfig:
-    dataset_url: str
-    dataset_dir: Path
-    ingested_dir: Path
-    raw_data_dir: Path
-    dataset: str
+    source_file: str
+    dest_dir: Path
+    train_data: Path
+    test_data: Path
 
 
 @dataclass(frozen=True)
 class DataValidationConfig:
-    root_dir: Path
-    prepro_obj_path: Path
-    clean_data_dir: Path
-    serialized_obj_dir: Path
-    marketing_compaign_csv_file: str
+    schema_filepath: Path
+    report_filepath: Path
+    report_page_filepath: Path
 
 
 @dataclass(frozen=True)
 class DataTransformationConfig:
-    transformed_data_dir: Path
+    transformed_train_dir: Path
+    transformed_test_dir: Path
+    preprocessed_obj_path: Path
 
 
 @dataclass(frozen=True)
-class TrainingConfig:
-    trained_model_dir: Path
-    trained_model_name: str
+class ModelTrainingConfig:
+    model_config_filepath: Path
+    model_train_filepath: object
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    model_evaluation_filepath: Path
+    time_stamp: str
+
+
+@dataclass(frozen=True)
+class ModelPusherConfig:
+    export_dir_path: Path
+
+
+@dataclass(frozen=True)
+class InitializedModel:
+    model_serial_number: int
+    model: object
+    param_grid_search: dict
+    model_name: str
