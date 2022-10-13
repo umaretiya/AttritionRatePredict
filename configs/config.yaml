@@ -35,3 +35,6 @@ model_training:
 model_evaluating:
   evaluated_model_dir: model_evaluation.yaml
 
+
+model_pusher_config:
+  model_export_dir: saved_models

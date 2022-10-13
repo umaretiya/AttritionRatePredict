@@ -39,10 +39,6 @@ class ModelTrainingConfig:
 class ModelEvaluationConfig:
     model_evaluation_filepath: Path
     time_stamp: str
-
-
-@dataclass(frozen=True)
-class ModelPusherConfig:
     export_dir_path: Path
 
 

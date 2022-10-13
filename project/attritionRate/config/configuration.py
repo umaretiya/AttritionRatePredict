@@ -10,7 +10,6 @@ from attritionRate.entity import (
     DataIngestionConfig,
     DataValidationConfig,
     ModelEvaluationConfig,
-    ModelPusherConfig,
     ModelTrainingConfig,
     DataTransformationConfig,
     PipeLineConfig,
@@ -163,22 +162,17 @@ class Configuration:
         model_evaluating_filepath = os.path.join(
             model_evaluation_artifacts, model_evaluating_filename
         )
+        
+        timestamp = f"{datetime.now().strftime('%Y%m%d%H%M%S')}"
+        model_pusher_artifacts = os.path.join(ROOT_DIR, MODEL_PUSHER_DIR, timestamp)
+        
         model_evaluation_config = ModelEvaluationConfig(
             model_evaluation_filepath=model_evaluating_filepath,
             time_stamp=self.timestamp,
+            export_dir_path=model_pusher_artifacts
         )
         return model_evaluation_config
 
-    def get_model_pusher_config(self):
-        # artifacts = self.pipeline.artifact_dir
-
-        timestamp = f"{datetime.now().strftime('%Y%m%d%H%M%S')}"
-        model_pusher_artifacts = os.path.join(ROOT_DIR, MODEL_PUSHER_DIR, timestamp)
-
-        model_pusher_config = ModelPusherConfig(
-            export_dir_path=model_pusher_artifacts,
-        )
-        return model_pusher_config
 
     def get_training_pipeline(self):
         training_artifacts_config = self.config_info.artifacts_config

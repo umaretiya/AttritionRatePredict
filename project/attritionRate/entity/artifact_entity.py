@@ -40,6 +40,7 @@ class MetricInfoArtifact:
     train_f1_score: float
     test_f1_score: float
     model_accuracy: float
+    index_number: int
 
 
 @dataclass
@@ -49,3 +50,11 @@ class GridSearchBestModel:
     best_model: object
     best_parameters: dict
     best_score: float
+
+@dataclass
+class ModelEvaluationArtifact:
+    evaluated_model_path: Path
+    is_model_accepted: bool
+    exported_model_path: Path
+    is_model_pusher: bool
+    

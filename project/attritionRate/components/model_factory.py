@@ -1,4 +1,3 @@
-
 import importlib
 from typing import List
 from sklearn.metrics import accuracy_score, f1_score
@@ -34,6 +33,7 @@ def evaluate_classifier(
                 train_f1_score=train_f1_score,
                 test_f1_score=test_f1_score,
                 model_accuracy=model_accuracy,
+                index_number=index_number,
             )
     index_number += 1
     if metric_info_artifact is None:
